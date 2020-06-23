@@ -23,7 +23,7 @@ module.exports = {
             }
         ]
     },
-    mode: "production",
+    mode: "development",
     devServer: {
         historyApiFallback: true
     },
