@@ -1,0 +1,28 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
+
+button {
+	background: none;
+	border: none;
+	outline: none;
+}
+
+.nav-container {
+	background-color: black;
+	padding: 1em;
+	display: flex;
+	justify-content: space-between;
+}
+
+.netflix-logo {
+	width: 100px;
+}
+
+.fa-bars {
+	color: white;
+}
