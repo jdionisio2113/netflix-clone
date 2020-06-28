@@ -1,17 +1,25 @@
 import React from 'react';
-import axios from 'axios';
-import { get, all } from 'axios';
+var ReactRouter = require('react-router-dom');
+var Router = ReactRouter.BrowserRouter;
+var Route = ReactRouter.Route;
+var Switch = ReactRouter.Switch;
 import API_KEY from '../config/api_key';
 
 import AppNavbar from './AppNavbar';
-import TrendingContainer from '../containers/TrendingContainer';
+import Home from './Home';
+import TvModalContainer from '../containers/TvModalContainer';
 
 class App extends React.Component {
 	render() {
 		return (
 			<div>
 				<AppNavbar />
-				<TrendingContainer />
+				<Router>
+					<Switch>
+						<Route exact path="/" component={Home} />
+						<Route exact path="/Tv/:id" component={TvModalContainer} />
+					</Switch>
+				</Router>
 			</div>
 		);
 	}

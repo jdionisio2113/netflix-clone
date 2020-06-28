@@ -2,8 +2,16 @@
 	box-sizing: border-box;
 }
 
+html,
+body {
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
 body {
 	margin: 0;
+	background: #161616;
+	font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 button {
@@ -25,4 +33,70 @@ button {
 
 .fa-bars {
 	color: white;
+}
+
+.trending-title {
+	color: #e5e5e5;
+	margin-left: 1em;
+}
+
+.main_poster {
+	width: 100%;
+}
+
+.featured_poster {
+	width: 100%;
+	height: auto;
+	padding: 0 0.3em;
+	transition: box-shadow .5s, transform .5s, margin .5s;
+}
+
+.featured_poster:hover {
+	transform: scale(1.2);
+}
+
+.slick-next:before,
+.slick-prev:before {
+	font-size: 30px;
+}
+
+.slick-next,
+.slick-prev {
+	z-index: 1000;
+	width: 100px;
+	height: 100%;
+}
+
+.modal-content {
+	background-color: black;
+	display: flex;
+	flex-direction: row;
+}
+
+.modal-dialog {
+	max-width: 100%;
+}
+
+.modal-header .close {
+	display: none;
+}
+
+.show-description {
+	width: 40%;
+}
+
+.custom-modal-style {
+	/* width: 600px; */
+}
+
+.close {
+	color: grey;
+}
+
+.close:hover {
+	color: #fff;
+}
+
+.modal-header {
+	border: none;
 }

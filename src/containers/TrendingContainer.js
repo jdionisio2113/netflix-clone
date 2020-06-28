@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getTrending } from '../actions';
+import {
+	getTrending
+	// fetchTrailers
+} from '../actions';
 import Trending from '../components/Trending';
 
 class TrendingContainer extends Component {
@@ -20,6 +23,7 @@ class TrendingContainer extends Component {
 const mapStateToProps = (state) => {
 	return {
 		trending: state.trending
+		// trailer: state.trailer
 	};
 };
 
