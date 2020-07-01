@@ -16,7 +16,7 @@ class TvModalContainer extends Component {
 
 function mapStateToProps(state) {
 	return {
-		film: state.tvShow.film,
+		tvSeries: state.tvShow.tvSeries,
 		error: state.tvShow.error,
 		isFetching: state.tvShow.isFetching,
 		trailers: state.tvShow.trailers

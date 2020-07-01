@@ -43,7 +43,7 @@ function trailersReducer(state = trailersInitialState, action) {
 const tvModalInitialState = {
 	isFetching: true,
 	error: '',
-	film: {},
+	tvSeries: {},
 	trailers: trailersInitialState
 };
 
@@ -57,7 +57,7 @@ function tvModalReducer(state = tvModalInitialState, action) {
 				...state,
 				isFetching: false,
 				error: '',
-				film: action.film
+				tvSeries: action.tvSeries
 			};
 
 		case FETCH_SINGLE_TVSHOW_FAILURE:

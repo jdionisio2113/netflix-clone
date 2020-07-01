@@ -3,7 +3,7 @@ import { FETCH_TRENDING, FETCHING_TRENDING_SUCCESS, FETCHING_TRENDING_FAILURE } 
 const initialState = {
 	isFetching: false,
 	error: '',
-	tvShows: []
+	genreData: []
 };
 
 export default function(state = initialState, action) {
@@ -18,7 +18,7 @@ export default function(state = initialState, action) {
 				...state,
 				isFetching: false,
 				error: '',
-				tvShows: action.payload
+				genreData: action.genreData
 			};
 		case FETCHING_TRENDING_FAILURE:
 			return {

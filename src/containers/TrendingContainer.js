@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {
-	getTrending
-	// fetchTrailers
-} from '../actions';
-import Trending from '../components/Trending';
+
+import { getTrending } from '../actions';
+import GenreSlider from '../components/GenreSlider';
 
 class TrendingContainer extends Component {
 	componentDidMount() {
@@ -13,17 +11,21 @@ class TrendingContainer extends Component {
 
 	render() {
 		return (
-			<div>
-				<Trending trending={this.props.trending} />
-			</div>
+			<GenreSlider
+				genreTitle={'Trending Now'}
+				isFetching={this.props.isFetching}
+				error={this.props.error}
+				genreData={this.props.genreData}
+			/>
 		);
 	}
 }
 
 const mapStateToProps = (state) => {
 	return {
-		trending: state.trending
-		// trailer: state.trailer
+		error: state.trending.error,
+		isFetching: state.trending.isFetching,
+		genreData: state.trending.genreData
 	};
 };
 
