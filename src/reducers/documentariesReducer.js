@@ -1,7 +1,7 @@
 import {
-	FETCHING_ACTION_ADVENTURE,
-	FETCHING_ACTION_ADVENTURE_SUCCESS,
-	FETCHING_ACTION_ADVENTURE_FAILURE
+	FETCHING_DOCUMENTARIES,
+	FETCHING_DOCUMENTARIES_SUCCESS,
+	FETCHING_DOCUMENTARIES_FAILURE
 } from '../actions/types';
 
 const initialState = {
@@ -10,20 +10,20 @@ const initialState = {
 	genreData: []
 };
 
-function actionAdventureReducer(state = initialState, action) {
+function documentariesReducer(state = initialState, action) {
 	switch (action.type) {
-		case FETCHING_ACTION_ADVENTURE:
+		case FETCHING_DOCUMENTARIES:
 			return {
 				...state,
 				isFetching: true
 			};
-		case FETCHING_ACTION_ADVENTURE_SUCCESS:
+		case FETCHING_DOCUMENTARIES_SUCCESS:
 			return {
 				...state,
 				isFetching: false,
 				genreData: action.genreData
 			};
-		case FETCHING_ACTION_ADVENTURE_FAILURE:
+		case FETCHING_DOCUMENTARIES_FAILURE:
 			return {
 				...state,
 				isFetching: false,
@@ -34,4 +34,4 @@ function actionAdventureReducer(state = initialState, action) {
 	}
 }
 
-export default actionAdventureReducer;
+export default documentariesReducer;

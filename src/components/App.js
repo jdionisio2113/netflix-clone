@@ -6,10 +6,8 @@ var Switch = ReactRouter.Switch;
 import API_KEY from '../config/api_key';
 
 import AppNavbar from './AppNavbar';
-// import Home from './Home';
 import GenreSliderContainer from '../containers/GenreSliderContainer';
 import TvModalContainer from '../containers/TvModalContainer';
-import TrendingContainer from '../containers/TrendingContainer';
 
 class App extends React.Component {
 	render() {
@@ -17,7 +15,6 @@ class App extends React.Component {
 			<div>
 				<AppNavbar />
 				<Router>
-					{/* <TrendingContainer /> */}
 					<Switch>
 						<Route exact path="/" component={GenreSliderContainer} />
 						<Route exact path="/Tv/:id" component={TvModalContainer} />

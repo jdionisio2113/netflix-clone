@@ -22,7 +22,6 @@ class TvModal extends Component {
 
 	TrailersDisplay() {
 		const { isFetching, error, trailersArr } = this.props.trailers;
-
 		var trailer = trailersArr;
 		var tvSeriesName = this.props.tvSeries.name;
 		var tvSeriesReleaseDate = this.props.tvSeries.first_air_date;
