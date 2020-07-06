@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import GenreSliderContainer from '../containers/GenreSliderContainer';
 
 class TvModal extends Component {
 	constructor(props) {
@@ -22,12 +23,36 @@ class TvModal extends Component {
 
 	TrailersDisplay() {
 		const { isFetching, error, trailersArr } = this.props.trailers;
+		const {
+			number_of_seasons,
+			genres,
+			name,
+			first_air_date,
+			overview,
+			backdrop_path,
+			created_by
+		} = this.props.tvSeries;
+		// if (this.props.tvSeries.seasons) {
+		// 	this.props.tvSeries.seasons.map((season) => {
+		// 		console.log(season);
+		// 	});
+		// }
+		// if (this.props.tvSeries.created_by) {
+		// 	this.props.tvSeries.created_by.map((creator) => {
+		// 		this.setState({
+		// 			creators: creator.name
+		// 		});
+		// 	});
+		// }
+
+		// console.log(this.state.creators);
+
 		var trailer = trailersArr;
-		var tvSeriesName = this.props.tvSeries.name;
-		var tvSeriesReleaseDate = this.props.tvSeries.first_air_date;
-		var seasons = this.props.tvSeries.number_of_seasons;
-		var overviewDescription = this.props.tvSeries.overview;
-		var backDropPoster = this.props.tvSeries.backdrop_path;
+		var tvSeriesName = name;
+		var tvSeriesReleaseDate = first_air_date;
+		var seasons = number_of_seasons;
+		var overviewDescription = overview;
+		var backDropPoster = backdrop_path;
 
 		if (seasons > 1) {
 			seasons = `${seasons} seasons`;
@@ -36,25 +61,51 @@ class TvModal extends Component {
 		}
 
 		return (
-			<Modal contentClassName="custom-modal-style" isOpen={this.state.modal} toggle={this.toggle}>
+			<Modal
+				contentClassName="custom-modal-style"
+				isOpen={this.state.modal}
+				toggle={this.toggle}
+				backdrop={false}
+			>
 				<div className="description-container">
 					<ModalHeader toggle={this.toggle}>
 						<h1 className="tv_name">{tvSeriesName}</h1>
 					</ModalHeader>
-					<span>
-						Release Date: {tvSeriesReleaseDate} / {seasons}
-					</span>
+					<div className="details">
+						<span>Release Date: {tvSeriesReleaseDate}</span>
+						<span>{seasons}</span>
+					</div>
+					{/* <div className="creators">
+						Created by :{' '}
+						{created_by ? (
+							created_by.map((creator) => {
+								return <p>{creator.name}</p>;
+							})
+						) : null}
+					</div> */}
 					<p className="description">{overviewDescription}</p>
+
+					{/* <div className="genres">
+						Genres:
+						{genres ? (
+							genres.map((genre) => {
+								return <p>{genre.name},</p>;
+							})
+						) : null}
+					</div> */}
 				</div>
 				<ModalBody>
 					{/* <Label for="item">Item</Label> */}
-					<Link
+					{/* <Link
 						to={{
 							pathname: `/`
 						}}
+						className="exit-modal"
 					>
-						<span aria-hidden="true">x</span>
-					</Link>
+						<span aria-hidden="true">
+							<i class="fas fa-times fa-2x" />
+						</span>
+					</Link> */}
 					{!trailer ? (
 						<img src={`https://image.tmdb.org/t/p/w780//${backDropPoster}`} />
 					) : (
@@ -69,13 +120,27 @@ class TvModal extends Component {
 							allow="autoplay"
 						/>
 					)}
+					<Link
+						to={{
+							pathname: `/`
+						}}
+						className="exit-modal"
+					>
+						<span aria-hidden="true">
+							<i className="fas fa-times" />
+						</span>
+					</Link>
 				</ModalBody>
 			</Modal>
 		);
 	}
 
 	render() {
-		return <div>{this.TrailersDisplay()}</div>;
+		return (
+			<div>
+				{this.TrailersDisplay()} <GenreSliderContainer />
+			</div>
+		);
 	}
 }
 
