@@ -40,7 +40,7 @@ class GenreSliderContainer extends Component {
 			10751
 		);
 
-		this.props.getGenres(types.FETCHING_KIDS, types.FETCHING_KIDS_SUCCESS, types.FETCHING_KIDS_FAILURE, 10762);
+		// this.props.getGenres(types.FETCHING_KIDS, types.FETCHING_KIDS_SUCCESS, types.FETCHING_KIDS_FAILURE, 10762);
 	}
 
 	render() {
@@ -85,12 +85,12 @@ class GenreSliderContainer extends Component {
 					error={family.error}
 					genreData={family.genreData}
 				/>
-				<GenreSlider
+				{/* <GenreSlider
 					genreTitle={'Kids'}
 					isFetching={kids.isFetching}
 					error={kids.error}
 					genreData={kids.genreData}
-				/>
+				/> */}
 			</div>
 		);
 	}

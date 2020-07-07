@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 
 function GenreSlider(props) {
-	var { genreData, genreTitle } = props;
+	var { genreData, genreTitle, isFetching } = props;
 
 	const settings = {
 		dots: false,
@@ -28,24 +28,27 @@ function GenreSlider(props) {
 	return (
 		<div className="genre-slider-container">
 			<h1 className="trending-title">{genreTitle}</h1>
-
-			<Slider {...settings}>
-				{genreData.map((movie) => {
-					if (!movie.backdrop_path) return null;
-					return (
-						<Link to={`/Tv/${movie.id}`} key={movie.id}>
-							{movie.backdrop_path ? (
-								<img
-									src={`https://image.tmdb.org/t/p/w780//${movie.backdrop_path}`}
-									className="featured_poster"
-								/>
-							) : (
-								<p className="imgReplacement">{movie.title}</p>
-							)}
-						</Link>
-					);
-				})}
-			</Slider>
+			{isFetching ? (
+				<div className="loader" />
+			) : (
+				<Slider {...settings}>
+					{genreData.map((tvShow) => {
+						if (!tvShow.backdrop_path) return null;
+						return (
+							<Link to={`/Tv/${tvShow.id}`} key={tvShow.id}>
+								{tvShow.backdrop_path ? (
+									<img
+										src={`https://image.tmdb.org/t/p/w780//${tvShow.backdrop_path}`}
+										className="featured_poster"
+									/>
+								) : (
+									<p className="imgReplacement">{tvShow.title}</p>
+								)}
+							</Link>
+						);
+					})}
+				</Slider>
+			)}
 		</div>
 	);
 }
