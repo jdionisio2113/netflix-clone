@@ -106,25 +106,12 @@ class TvModal extends Component {
 						</ModalHeader>
 						<div className="details">
 							<span>Release Date: {tvSeriesReleaseDate}</span>
-							{/* <button onClick={this.toggleSeasons}> */}
 							<span>{seasons}</span>
-							{/* </button> */}
 						</div>
 						<p className="description">{overviewDescription}</p>
 					</div>
 
 					<ModalBody>
-						{/* <Label for="item">Item</Label> */}
-						{/* <Link
-						to={{
-							pathname: `/`
-						}}
-						className="exit-modal"
-					>
-						<span aria-hidden="true">
-							<i class="fas fa-times fa-2x" />
-						</span>
-					</Link> */}
 						{!trailer ? (
 							<div>
 								<img

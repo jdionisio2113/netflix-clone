@@ -47,7 +47,7 @@ class GenreSliderContainer extends Component {
 		const { actionAdventure, comedies, documentaries, dramas, scifi, family, kids } = this.props;
 
 		return (
-			<div>
+			<div className="genre-slider-wrapper">
 				<TrendingContainer />
 				<GenreSlider
 					genreTitle={'Action & Adventure'}

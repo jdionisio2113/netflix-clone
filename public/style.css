@@ -7,6 +7,7 @@ body {
 	max-width: 100%;
 	overflow-x: hidden;
 	line-height: 1.3;
+	letter-spacing: 0.0625em;
 }
 
 body {
@@ -25,8 +26,8 @@ button {
 	border: 16px solid #00000000;
 	border-top: 16px solid #ad0b0b;
 	border-radius: 50%;
-	width: 120px;
-	height: 120px;
+	width: 80px;
+	height: 80px;
 	animation: spin 1s linear infinite;
 	margin: 0 auto;
 }
@@ -40,8 +41,14 @@ button {
 	}
 }
 
+/* ==========NAVIGATION========== */
+
 .nav-container {
 	background-color: black;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 1000;
 	padding: 1em;
 	display: flex;
 	justify-content: space-between;
@@ -54,6 +61,61 @@ button {
 .fa-bars {
 	color: white;
 }
+
+/* ==========MAINSHOW========== */
+
+.backdrop-container {
+	margin-top: 4em;
+}
+
+.main-show-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: black;
+	top: 0;
+	color: white;
+}
+
+.main-show-wrapper iframe {
+	width: 50%;
+}
+
+.main-show-overview {
+	position: relative;
+	flex-direction: column;
+	width: 50%;
+	margin: 0 auto;
+}
+
+.main-show-overview span {
+	display: block;
+}
+
+.main-show-title {
+	font-size: 3em;
+	margin: .5em 0;
+}
+
+.main-show-description {
+	font-size: 1.3em;
+	margin: 1em 0;
+}
+
+.main-show-poster {
+	width: 100%;
+	opacity: .3;
+}
+
+.main-show {
+	position: absolute;
+	top: 0;
+	margin: 0 3em;
+	max-height: 100%;
+	overflow: auto;
+}
+
+/* ==========GENRESLIDER========== */
 
 .trending-title {
 	color: #e5e5e5;
@@ -83,10 +145,12 @@ button {
 
 .slick-next,
 .slick-prev {
-	z-index: 1000;
+	z-index: 1;
 	width: 100px;
 	height: 100%;
 }
+
+/* ==========MODAL========== */
 
 .modal-content {
 	background-color: black;
@@ -120,10 +184,6 @@ button {
 .description-container {
 	width: 100%;
 	padding: 1em;
-}
-
-.custom-modal-style {
-	/* width: 600px; */
 }
 
 .modal-header {
@@ -160,20 +220,6 @@ button {
 	flex-direction: column;
 }
 
-/* .creators {
-	display: flex;
-	justify-content: space-between;
-	color: #828282;
-	font-weight: 700;
-} */
-
-/* .genres {
-	display: flex;
-	font-size: .9em;
-	color: #828282;
-	justify-content: space-evenly;
-} */
-
 .desktop-poster {
 	display: none;
 }
@@ -183,10 +229,6 @@ button {
 }
 
 @media screen and (min-width: 600px) {
-	.modal-container {
-		/* height: 430px; */
-	}
-
 	.modal-wrapper {
 		display: flex;
 		align-items: center;
@@ -227,19 +269,4 @@ button {
 		display: flex;
 		flex-direction: row;
 	}
-
-	/* .seasons-container {
-		margin: 0 auto;
-		text-align: center;
-		max-width: 730px;
-		max-height: 430px;
-		min-height: 430px;
-		overflow-y: auto;
-	} */
-
-	/* .season-posters {
-		width: 130px;
-		height: 200px;
-		margin: .5em;
-	} */
 }
