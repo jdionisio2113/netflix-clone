@@ -2,29 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchSingleTvShow } from '../actions';
-// function MainShow(props) {
-// 	var { genreData } = props;
-// 	console.log(genreData[0]);
-// 	if (genreData[0]) {
-// 		var backDropPoster = genreData[0].backdrop_path;
-// 		var mainShowName = genreData[0].original_name;
-// 		var descriptionOverview = genreData[0].overview;
-// 	}
-
-// 	return (
-// 		<div className="backdrop-container">
-// 			<img src={`https://image.tmdb.org/t/p/w780//${backDropPoster}`} className="main_poster" />
-// 			<div className="main-show-overview">
-// 				<h1 className="main-show-title">{mainShowName}</h1>
-// 				<p className="main-show-description">{descriptionOverview}</p>
-// 			</div>
-// 		</div>
-// 	);
-// }
+// import { fetchMainShow } from '../actions';
 
 class MainShowContainer extends Component {
+	constructor(props) {
+		super(props);
+
+		this.displayMainShow = this.displayMainShow.bind(this);
+	}
 	componentDidMount() {
 		this.props.fetchSingleTvShow(this.props.id);
+		// this.props.fetchMainShow();
 	}
 
 	componentDidUpdate(prevProps) {
@@ -33,9 +21,10 @@ class MainShowContainer extends Component {
 		}
 	}
 
-	render() {
-		const { trailers, tvSeries, isFetching } = this.props;
+	displayMainShow() {
+		const { trailers, tvSeries, isFetching, genreData } = this.props;
 		var seasonNum = tvSeries.number_of_seasons;
+		console.log(trailers);
 
 		if (seasonNum > 1) {
 			seasonNum = `${seasonNum} seasons`;
@@ -44,6 +33,7 @@ class MainShowContainer extends Component {
 		}
 		return (
 			// isFetching ? <div className="loader"></div>
+			// <div>MainSHow</div>
 			<div className="backdrop-container">
 				{/* <img
 					className="main-show-poster"
@@ -71,13 +61,17 @@ class MainShowContainer extends Component {
 						width="46%"
 						height="439px"
 						// src={embed}
-						src={`https://www.youtube.com/embed/${trailers.trailersArr.key}?`}
+						src={`https://www.youtube.com/embed/${trailers.trailersArr.key}`}
 						allowFullScreen="allowFullScreen"
 						// allow="autoplay"
 					/>
 				</div>
 			</div>
 		);
+	}
+
+	render() {
+		return <div>{this.displayMainShow()}</div>;
 	}
 }
 

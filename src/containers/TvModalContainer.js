@@ -10,6 +10,7 @@ class TvModalContainer extends Component {
 		const id = this.props.match.params.id;
 		this.props.fetchSingleTvShow(id);
 	}
+
 	render() {
 		return <TvModal {...this.props} />;
 	}

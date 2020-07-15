@@ -1,14 +1,3 @@
-// import {
-// 	FETCH_TRENDING,
-// 	FETCHING_TRENDING_SUCCESS,
-// 	FETCHING_TRENDING_FAILURE,
-// 	FETCH_TRAILER,
-// 	FETCH_TRAILER_SUCCESS,
-// 	FETCH_TRAILER_FAILURE,
-// 	FETCH_SINGLE_TVSHOW,
-// 	FETCH_SINGLE_TVSHOW_SUCCESS,
-// 	FETCH_SINGLE_TVSHOW_FAILURE
-// } from './types';
 import * as types from './types';
 import API_KEY from '../config/api_key';
 import endpoint from '../config/endpoint';

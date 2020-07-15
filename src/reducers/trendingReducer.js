@@ -1,7 +1,7 @@
 import { FETCH_TRENDING, FETCHING_TRENDING_SUCCESS, FETCHING_TRENDING_FAILURE } from '../actions/types';
 
 const initialState = {
-	isFetching: false,
+	isFetching: true,
 	error: '',
 	genreData: []
 };

@@ -15,7 +15,6 @@ class TvModal extends Component {
 		this.toggleModal = this.toggleModal.bind(this);
 		this.toggleSeasons = this.toggleSeasons.bind(this);
 		this.TrailersDisplay = this.TrailersDisplay.bind(this);
-		// this.seasonsDisplay = this.seasonsDisplay.bind(this);
 	}
 
 	toggleModal() {
@@ -80,7 +79,7 @@ class TvModal extends Component {
 		} else {
 			seasons = `${seasons} season`;
 		}
-
+		// console.log(trailer);
 		return (
 			<Modal
 				// contentClassName="custom-modal-style"

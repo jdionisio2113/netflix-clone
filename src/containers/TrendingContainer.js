@@ -11,24 +11,19 @@ class TrendingContainer extends Component {
 	}
 
 	render() {
-		// console.log(this.props.genreData);
-		// const mainShow = this.props.genreData.shift();
-				if (this.props.genreData[9]) {
-			var id = this.props.genreData[9].id;
-			// var backDropPoster = this.props.genreData[0].backdrop_path;
-			// var mainShowName = this.props.genreData[0].original_name;
-			// var descriptionOverview = this.props.genreData[0].overview;
+		if (this.props.genreData[0]) {
+			var id = this.props.genreData[0].id;
 		}
 		return (
-			<>	
-				<MainShowContainer id={id} />
+			<div>
+				<MainShowContainer id={id} genreData={this.props.genreData} />
 				<GenreSlider
 					genreTitle={'Trending Now'}
 					isFetching={this.props.isFetching}
 					error={this.props.error}
 					genreData={this.props.genreData}
 				/>
-			</>
+			</div>
 		);
 	}
 }
