@@ -5,6 +5,7 @@ import { getGenres } from '../actions';
 import * as types from '../actions/types';
 import GenreSlider from '../components/GenreSlider';
 import TrendingContainer from './TrendingContainer';
+import MainShow from '../components/MainShow';
 
 class GenreSliderContainer extends Component {
 	componentDidMount() {
@@ -48,6 +49,7 @@ class GenreSliderContainer extends Component {
 
 		return (
 			<div className="genre-slider-wrapper">
+				<MainShow />
 				<TrendingContainer />
 				<GenreSlider
 					genreTitle={'Action & Adventure'}

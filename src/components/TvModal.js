@@ -29,16 +29,6 @@ class TvModal extends Component {
 		});
 	}
 
-	// seasonsDisplay() {
-	// 	const { tvSeries } = this.props;
-
-	// 	const seasonsArr = tvSeries.seasons.shift();
-
-	// 	return tvSeries.seasons.map((season) => {
-	// 		return <img className="season-posters" src={`https://image.tmdb.org/t/p/w300//${season.poster_path}`} />;
-	// 	});
-	// }
-
 	TrailersDisplay() {
 		const { isFetching, error, trailersArr } = this.props.trailers;
 		const {
@@ -58,36 +48,15 @@ class TvModal extends Component {
 		var seasons = number_of_seasons;
 		var overviewDescription = overview;
 		var backDropPoster = backdrop_path;
-		var createdByArr = [];
-		var creators;
-		// var arr = [];
-		// var embed;
-
-		// trailer.map((trailer) => {
-		// 	// console.log(trailer.key);
-		// 	arr.push(trailer.key);
-		// });
-
-		// if (!arr[1]) {
-		// 	embed = `https://www.youtube.com/embed/${arr[0]}?autoplay=1`;
-		// } else {
-		// 	embed = `https://www.youtube.com/embed/${arr[1]}?autoplay=1`;
-		// }
 
 		if (seasons > 1) {
 			seasons = `${seasons} seasons`;
 		} else {
 			seasons = `${seasons} season`;
 		}
-		// console.log(trailer);
+
 		return (
-			<Modal
-				// contentClassName="custom-modal-style"
-				className="modal-container"
-				isOpen={this.state.modal}
-				toggle={this.toggleModal}
-				backdrop={false}
-			>
+			<Modal className="modal-container" isOpen={this.state.modal} toggle={this.toggleModal} backdrop={false}>
 				<div className="modal-wrapper">
 					<div className="description-container">
 						<Link
@@ -126,12 +95,10 @@ class TvModal extends Component {
 							<div className="seasons-container">{this.seasonsDisplay()}</div>
 						) : (
 							<iframe
-								// key={trailer.id}
 								scrolling="no"
 								frameBorder="0"
 								width="100%"
 								height="430"
-								// src={embed}
 								src={`https://www.youtube.com/embed/${trailer.key}?autoplay=1`}
 								allowFullScreen="allowFullScreen"
 								allow="autoplay"
@@ -154,12 +121,7 @@ class TvModal extends Component {
 	}
 
 	render() {
-		return (
-			<div>
-				{this.TrailersDisplay()}
-				{/* <GenreSliderContainer /> */}
-			</div>
-		);
+		return <div>{this.TrailersDisplay()}</div>;
 	}
 }
 

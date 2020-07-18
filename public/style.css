@@ -77,10 +77,6 @@ button {
 	color: white;
 }
 
-.main-show-wrapper iframe {
-	width: 50%;
-}
-
 .main-show-overview {
 	position: relative;
 	flex-direction: column;
@@ -109,8 +105,8 @@ button {
 
 .main-show {
 	position: absolute;
-	top: 0;
-	margin: 0 3em;
+	top: 5%;
+	margin: 0 5em;
 	max-height: 100%;
 	overflow: auto;
 }

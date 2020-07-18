@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchSingleTvShow } from '../actions';
 import TvModal from '../components/TvModal';
-import GenreSliderContainer from './GenreSliderContainer';
 
 class TvModalContainer extends Component {
 	componentDidMount() {

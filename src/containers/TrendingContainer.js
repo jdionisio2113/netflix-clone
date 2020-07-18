@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 import { getTrending } from '../actions';
 import GenreSlider from '../components/GenreSlider';
-import MainShowContainer from './MainShowContainer';
 
 class TrendingContainer extends Component {
 	componentDidMount() {
@@ -11,12 +10,8 @@ class TrendingContainer extends Component {
 	}
 
 	render() {
-		if (this.props.genreData[0]) {
-			var id = this.props.genreData[0].id;
-		}
 		return (
 			<div>
-				<MainShowContainer id={id} genreData={this.props.genreData} />
 				<GenreSlider
 					genreTitle={'Trending Now'}
 					isFetching={this.props.isFetching}
