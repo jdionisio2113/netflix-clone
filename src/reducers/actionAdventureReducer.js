@@ -4,13 +4,13 @@ import {
 	FETCHING_ACTION_ADVENTURE_FAILURE
 } from '../actions/types';
 
-const initialState = {
+export const actionAdventureInitialState = {
 	isFetching: false,
 	error: '',
 	genreData: []
 };
 
-function actionAdventureReducer(state = initialState, action) {
+function actionAdventureReducer(state = actionAdventureInitialState, action) {
 	switch (action.type) {
 		case FETCHING_ACTION_ADVENTURE:
 			return {

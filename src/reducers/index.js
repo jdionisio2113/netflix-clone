@@ -8,9 +8,11 @@ import dramasReducer from './dramasReducer';
 import kidsReducer from './kidsReducer';
 import scifiReducer from './scifiReducer';
 import familyReducer from './familyReducer';
+import genreSliderReducer from './genreSliderReducer';
 
 export default combineReducers({
 	trending: trendingReducer,
+	genre: genreSliderReducer,
 	tvShow: tvModalReducer,
 	actionAdventure: actionAdventureReducer,
 	comedies: comediesReducer,

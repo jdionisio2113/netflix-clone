@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
+import ReactDOM from 'react-dom';
 
 function GenreSlider(props) {
 	var { genreData, genreTitle, isFetching } = props;
@@ -35,7 +36,7 @@ function GenreSlider(props) {
 					{genreData.map((tvShow) => {
 						if (!tvShow.backdrop_path) return null;
 						return (
-							<Link to={`/Tv/${tvShow.id}`} key={tvShow.id}>
+							<Link to={`/Tv/${tvShow.id}`} key={tvShow.id} id="link">
 								{tvShow.backdrop_path ? (
 									<img
 										src={`https://image.tmdb.org/t/p/w780//${tvShow.backdrop_path}`}

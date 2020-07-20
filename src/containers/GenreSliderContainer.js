@@ -45,8 +45,8 @@ class GenreSliderContainer extends Component {
 	}
 
 	render() {
-		const { actionAdventure, comedies, documentaries, dramas, scifi, family, kids } = this.props;
-
+		const { actionAdventure, comedies, documentaries, dramas, scifi, family, kids, genre } = this.props;
+		console.log(this.props.genre);
 		return (
 			<div className="genre-slider-wrapper">
 				<MainShow />
@@ -106,7 +106,8 @@ function mapStateToProps(state) {
 		dramas: state.dramas,
 		scifi: state.scifi,
 		family: state.family,
-		kids: state.kids
+		kids: state.kids,
+		genre: state.genre
 	};
 }
 
