@@ -15,7 +15,8 @@ class MainShow extends Component {
 			title: '',
 			airDate: '',
 			overview: '',
-			seasonNum: ''
+			seasonNum: '',
+			error: false
 		};
 	}
 
@@ -52,6 +53,9 @@ class MainShow extends Component {
 				this.setState({
 					trailerKey: res.data.results[0].key
 				});
+			})
+			.catch((err) => {
+				this.setState({ error: true });
 			});
 	}
 
@@ -59,26 +63,30 @@ class MainShow extends Component {
 		const { trailerKey, backdrop, title, airDate, overview, seasonNum } = this.state;
 		return (
 			<div className="backdrop-container">
-				<div className="main-show-wrapper">
-					<div className="main-show-overview">
-						<img className="main-show-poster" src={`https://image.tmdb.org/t/p/w780//${backdrop}`} />
-						<div className="main-show">
-							<h1 className="main-show-title">{title}</h1>
-							<span>Release Date: {airDate}</span>
-							<span>{seasonNum}</span>
-							<p className="main-show-description">{overview}</p>
+				{this.state.error ? (
+					<h1>Something went wrong. Please try again.</h1>
+				) : (
+					<div className="main-show-wrapper">
+						<div className="main-show-overview">
+							<img className="main-show-poster" src={`https://image.tmdb.org/t/p/w780//${backdrop}`} />
+							<div className="main-show">
+								<h1 className="main-show-title">{title}</h1>
+								<span>Release Date: {airDate}</span>
+								<span>{seasonNum}</span>
+								<p className="main-show-description">{overview}</p>
+							</div>
 						</div>
+						<iframe
+							scrolling="no"
+							frameBorder="0"
+							width="50%"
+							height="439px"
+							src={`https://www.youtube.com/embed/${trailerKey}?autoplay=1`}
+							allowFullScreen="allowFullScreen"
+							allow="autoplay"
+						/>
 					</div>
-					<iframe
-						scrolling="no"
-						frameBorder="0"
-						width="50%"
-						height="439px"
-						src={`https://www.youtube.com/embed/${trailerKey}?autoplay=1`}
-						allowFullScreen="allowFullScreen"
-						allow="autoplay"
-					/>
-				</div>
+				)}
 			</div>
 		);
 	}
