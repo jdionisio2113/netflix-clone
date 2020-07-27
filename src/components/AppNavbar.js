@@ -1,20 +1,39 @@
 import React, { Component } from 'react';
 import logo from '../../public/img/netflix-logo.png';
+import AppNavbarContainer from '../containers/AppNavbarContainer';
+import { Link } from 'react-router-dom';
 
 class AppNavbar extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			isOpen: false
+			value: ''
 		};
 
-		this.toggle = this.toggle.bind(this);
+		this.handleChange = this.handleChange.bind(this);
+		this.resetInput = this.resetInput.bind(this);
 	}
 
-	toggle() {
+	handleChange(e) {
+		var input = e.target.value;
+		this.setState({ value: input });
+
+		clearTimeout(this.myTimeout);
+
+		this.myTimeout = setTimeout(() => {
+			this.props.history.replace(`/search/q=${input}`);
+			this.props.search(input);
+
+			if (input === '') {
+				this.props.history.replace(`/`);
+			}
+		}, 1000);
+	}
+
+	resetInput() {
 		this.setState({
-			isOpen: !this.state.isOpen
+			value: ''
 		});
 	}
 
@@ -22,9 +41,22 @@ class AppNavbar extends Component {
 		return (
 			<div className="nav-container">
 				<img className="netflix-logo" src={logo} />
-				<button onClick={this.toggle}>
-					<i className="fas fa-bars fa-2x" />
-				</button>
+				<div className="input-container">
+					<input
+						type="text"
+						name="Titles, people, genres"
+						placeholder="Titles, people, genres"
+						autoComplete="off"
+						className="input-bar"
+						onChange={this.handleChange}
+						value={this.state.value}
+					/>
+					{this.state.value === '' ? null : (
+						<Link to={'/'} onClick={this.resetInput}>
+							<i className="fas fa-times" />
+						</Link>
+					)}
+				</div>
 			</div>
 		);
 	}

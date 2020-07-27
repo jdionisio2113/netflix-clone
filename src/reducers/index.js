@@ -8,6 +8,7 @@ import dramasReducer from './dramasReducer';
 import kidsReducer from './kidsReducer';
 import scifiReducer from './scifiReducer';
 import familyReducer from './familyReducer';
+import searchReducer from './searchReducer';
 
 export default combineReducers({
 	trending: trendingReducer,
@@ -18,5 +19,6 @@ export default combineReducers({
 	dramas: dramasReducer,
 	kids: kidsReducer,
 	scifi: scifiReducer,
-	family: familyReducer
+	family: familyReducer,
+	search: searchReducer
 });

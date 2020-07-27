@@ -13,19 +13,12 @@ class TvModal extends Component {
 		};
 
 		this.toggleModal = this.toggleModal.bind(this);
-		this.toggleSeasons = this.toggleSeasons.bind(this);
 		this.TrailersDisplay = this.TrailersDisplay.bind(this);
 	}
 
 	toggleModal() {
 		this.setState({
 			modal: !this.state.modal
-		});
-	}
-
-	toggleSeasons() {
-		this.setState({
-			seasons: !this.state.seasons
 		});
 	}
 
@@ -55,6 +48,8 @@ class TvModal extends Component {
 			seasons = `${seasons} season`;
 		}
 
+		console.log(this.props);
+
 		return (
 			<Modal className="modal-container" isOpen={this.state.modal} toggle={this.toggleModal} backdrop={false}>
 				<div className="modal-wrapper">
@@ -65,9 +60,11 @@ class TvModal extends Component {
 							}}
 							className="mobile-exit-modal"
 						>
+							{/* <button className="mobile-exit-modal" onClick={this.props.history.goBack}> */}
 							<span aria-hidden="true">
 								<i className="fas fa-times fa-2x" />
 							</span>
+							{/* </button> */}
 						</Link>
 						<ModalHeader toggle={this.toggleModal}>
 							<h1 className="tv_name">{tvSeriesName}</h1>
@@ -91,8 +88,6 @@ class TvModal extends Component {
 									src={`https://image.tmdb.org/t/p/w780//${backDropPoster}`}
 								/>
 							</div>
-						) : this.state.seasons ? (
-							<div className="seasons-container">{this.seasonsDisplay()}</div>
 						) : (
 							<iframe
 								scrolling="no"

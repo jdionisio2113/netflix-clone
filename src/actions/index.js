@@ -78,3 +78,24 @@ export const fetchTrailers = (id) => async (dispatch) => {
 		});
 	}
 };
+
+export const searchTvShows = (query) => async (dispatch) => {
+	dispatch({ type: types.SEARCHING });
+
+	try {
+		const response = await endpoint.get(
+			`search/tv?api_key=${API_KEY}&language=en-US&query=${query}&page=1&include_adult=false`
+		);
+
+		dispatch({
+			type: types.SEARCHING_SUCCESS,
+			query,
+			tvShows: response.data.results
+		});
+	} catch (err) {
+		dispatch({
+			type: types.SEARCHING_FAILURE,
+			error: err.toString()
+		});
+	}
+};
