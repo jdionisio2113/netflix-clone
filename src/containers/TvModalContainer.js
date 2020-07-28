@@ -6,8 +6,7 @@ import TvModal from '../components/TvModal';
 
 class TvModalContainer extends Component {
 	componentDidMount() {
-		const id = this.props.match.params.id;
-		this.props.fetchSingleTvShow(id);
+		this.props.fetchSingleTvShow(this.props.id);
 	}
 
 	render() {

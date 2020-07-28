@@ -130,6 +130,18 @@ input:focus {
 	overflow: auto;
 }
 
+.tv-poster {
+	width: 100%;
+	opacity: .3;
+	position: relative;
+	margin-top: 10px;
+}
+
+.deets {
+	position: absolute;
+	top: 20%;
+}
+
 /* ==========GENRESLIDER========== */
 
 .trending-title {
@@ -179,6 +191,8 @@ input:focus {
 
 .modal-dialog {
 	max-width: 100%;
+	position: absolute;
+	top: 20%;
 }
 
 .modal-header .close {

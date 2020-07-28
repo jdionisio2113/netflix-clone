@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { searchTvShows } from '../actions';
@@ -7,7 +6,7 @@ import AppNavbar from '../components/AppNavbar';
 
 function AppNavbarContainer(props) {
 	const search = props.search;
-
+	// console.log(props);
 	return <AppNavbar search={search} history={props.history} match={props.match} />;
 }
 

@@ -40,7 +40,7 @@ class AppNavbar extends Component {
 	render() {
 		return (
 			<div className="nav-container">
-				<Link to={'/'}>
+				<Link to={'/'} onClick={this.resetInput}>
 					<img className="netflix-logo" src={logo} />
 				</Link>
 				<div className="input-container">

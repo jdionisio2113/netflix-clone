@@ -60,11 +60,9 @@ class TvModal extends Component {
 							}}
 							className="mobile-exit-modal"
 						>
-							{/* <button className="mobile-exit-modal" onClick={this.props.history.goBack}> */}
 							<span aria-hidden="true">
 								<i className="fas fa-times fa-2x" />
 							</span>
-							{/* </button> */}
 						</Link>
 						<ModalHeader toggle={this.toggleModal}>
 							<h1 className="tv_name">{tvSeriesName}</h1>
@@ -107,11 +105,22 @@ class TvModal extends Component {
 					}}
 					className="desktop-exit-modal"
 				>
+					{/* <button className="mobile-exit-modal" onClick={this.props.history.goBack}> */}
 					<span aria-hidden="true">
 						<i className="fas fa-times" />
 					</span>
+					{/* </button> */}
 				</Link>
 			</Modal>
+			// <div>
+			// 	<img className="tv-poster" src={`https://image.tmdb.org/t/p/w780//${backDropPoster}`} />
+			// 	<div className="deets">
+			// 		<h1 className="tv_name">{tvSeriesName}</h1>
+			// 		<span>Release Date: {tvSeriesReleaseDate}</span>
+			// 		<span>{seasons}</span>
+			// 		<p className="description">{overviewDescription}</p>
+			// 	</div>
+			// </div>
 		);
 	}
 

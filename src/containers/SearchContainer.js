@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { searchTvShows } from '../actions';
 import Search from '../components/Search';
+import TvModalContainer from './TvModalContainer';
 
 class SearchContainer extends Component {
 	componentDidMount() {
@@ -11,8 +12,13 @@ class SearchContainer extends Component {
 	}
 
 	render() {
-		// console.log(this.props);
-		return <Search tvShows={this.props.tvShows} />;
+		var id = this.props.match.params.id;
+		return (
+			<div>
+				{this.props.match.params.id ? <TvModalContainer id={id} /> : null}
+				<Search tvShows={this.props.tvShows} {...this.props} />
+			</div>
+		);
 	}
 }
 

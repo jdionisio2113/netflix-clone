@@ -6,6 +6,9 @@ import * as types from '../actions/types';
 import GenreSlider from '../components/GenreSlider';
 import TrendingContainer from './TrendingContainer';
 import MainShow from '../components/MainShow';
+import TvModalContainer from '../containers/TvModalContainer';
+
+// look for change in param then render tvmodal
 
 class GenreSliderContainer extends Component {
 	componentDidMount() {
@@ -46,10 +49,13 @@ class GenreSliderContainer extends Component {
 
 	render() {
 		const { actionAdventure, comedies, documentaries, dramas, scifi, family, kids } = this.props;
-
+		var id = this.props.match.params.id;
+		// console.log(this.props);
 		return (
 			<div className="genre-slider-wrapper">
 				<MainShow />
+				{this.props.match.params.id ? <TvModalContainer id={id} /> : null}
+
 				<TrendingContainer />
 				<GenreSlider
 					genreTitle={'Action & Adventure'}

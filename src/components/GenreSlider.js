@@ -35,7 +35,7 @@ function GenreSlider(props) {
 					{genreData.map((tvShow) => {
 						if (!tvShow.backdrop_path) return null;
 						return (
-							<Link to={`/Tv/${tvShow.id}`} key={tvShow.id}>
+							<Link to={`/${tvShow.id}`} key={tvShow.id}>
 								{tvShow.backdrop_path ? (
 									<img
 										src={`https://image.tmdb.org/t/p/w780//${tvShow.backdrop_path}`}
