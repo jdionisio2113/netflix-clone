@@ -16,6 +16,11 @@ class TvModal extends Component {
 		this.TrailersDisplay = this.TrailersDisplay.bind(this);
 	}
 
+	componentDidMount() {
+		var element = document.body;
+		element.style.padding = '0';
+	}
+
 	toggleModal() {
 		this.setState({
 			modal: !this.state.modal
@@ -47,9 +52,6 @@ class TvModal extends Component {
 		} else {
 			seasons = `${seasons} season`;
 		}
-
-		var element = document.body;
-		element.style.padding = '0';
 
 		return (
 			<Modal
