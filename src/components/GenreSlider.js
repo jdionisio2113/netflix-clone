@@ -25,6 +25,17 @@ function GenreSlider(props) {
 		]
 	};
 
+	var pauseMainShowIframe = () => {
+		var iframe = document.querySelector('.main-show-iframe');
+		iframe.contentWindow.postMessage(
+			JSON.stringify({
+				event: 'command',
+				func: 'stopVideo'
+			}),
+			'*'
+		);
+	};
+
 	return (
 		<div className="genre-slider-container">
 			<h1 className="trending-title">{genreTitle}</h1>
@@ -33,13 +44,14 @@ function GenreSlider(props) {
 			) : (
 				<Slider {...settings}>
 					{genreData.map((tvShow) => {
-						if (!tvShow.backdrop_path) return null;
+						if (!tvShow.poster_path) return null;
 						return (
-							<Link to={`/${tvShow.id}`} key={tvShow.id}>
-								{tvShow.backdrop_path ? (
+							<Link to={`/${tvShow.id}`} key={tvShow.id} id="show-link">
+								{tvShow.poster_path ? (
 									<img
-										src={`https://image.tmdb.org/t/p/w780//${tvShow.backdrop_path}`}
+										src={`https://image.tmdb.org/t/p/w300//${tvShow.poster_path}`}
 										className="featured_poster"
+										onClick={pauseMainShowIframe}
 									/>
 								) : (
 									<p className="imgReplacement">{tvShow.title}</p>

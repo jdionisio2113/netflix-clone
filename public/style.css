@@ -150,9 +150,10 @@ input:focus {
 }
 
 .featured_poster {
-	width: 100%;
+	width: 90%;
+	margin: 0 auto;
 	height: auto;
-	padding: 0 0.3em;
+	/* padding: 0 0.3em; */
 	transition: box-shadow .5s, transform .5s, margin .5s;
 }
 
@@ -170,6 +171,11 @@ input:focus {
 	z-index: 1;
 	width: 100px;
 	height: 100%;
+}
+
+.slick-arrow:hover {
+	background: rgba(20, 20, 20, .5);
+	transition: .5;
 }
 
 /* ==========MODAL========== */
@@ -259,10 +265,11 @@ span .fa-times:hover {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	overflow-y: hidden;
 }
 
 .searched_poster {
-	width: 300px;
+	width: 220px;
 	margin: 1em;
 	transition: .5s;
 	box-shadow: 10px 10px 8px #000;

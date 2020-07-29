@@ -11,13 +11,13 @@ function Search(props) {
 			{tvShows.isFetching ? (
 				<div className="loader" />
 			) : (
-				tvShowData.map((res) => {
-					var id = res.id;
+				tvShowData.map((tvShow) => {
+					var id = tvShow.id;
 					return (
-						<Link to={`/search/q=${search}/${res.id}`} key={res.id}>
-							{res.backdrop_path ? (
+						<Link to={`/search/q=${search}/${tvShow.id}`} key={tvShow.id}>
+							{tvShow.backdrop_path ? (
 								<img
-									src={`https://image.tmdb.org/t/p/w780//${res.backdrop_path}`}
+									src={`https://image.tmdb.org/t/p/w780//${tvShow.poster_path}`}
 									className="searched_poster"
 								/>
 							) : null}

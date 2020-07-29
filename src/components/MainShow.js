@@ -57,6 +57,31 @@ class MainShow extends Component {
 			.catch((err) => {
 				this.setState({ error: true });
 			});
+
+		window.onscroll = function() {
+			var mainShowIframe = (event) => {
+				var iframe = document.querySelector('.main-show-iframe');
+				iframe.contentWindow.postMessage(
+					JSON.stringify({
+						event: 'command',
+						func: event
+					}),
+					'*'
+				);
+			};
+
+			if (window.pageYOffset > 450) {
+				mainShowIframe('stopVideo');
+			}
+
+			if (window.pageYOffset === 0) {
+				mainShowIframe('playVideo');
+			}
+		};
+	}
+
+	componentWillUnmount() {
+		window.onscroll = null;
 	}
 
 	render() {
@@ -81,9 +106,10 @@ class MainShow extends Component {
 							frameBorder="0"
 							width="50%"
 							height="439px"
-							src={`https://www.youtube.com/embed/${trailerKey}?autoplay=1`}
+							src={`https://www.youtube.com/embed/${trailerKey}?autoplay=1&enablejsapi=1`}
 							allowFullScreen="allowFullScreen"
 							allow="autoplay"
+							className="main-show-iframe"
 						/>
 					</div>
 				)}
