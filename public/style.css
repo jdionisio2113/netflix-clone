@@ -4,7 +4,7 @@
 
 html,
 body {
-	max-width: 100%;
+	/* max-width: 100%; */
 	overflow-x: hidden;
 	line-height: 1.3;
 	letter-spacing: 0.0625em;
@@ -137,11 +137,6 @@ input:focus {
 	margin-top: 10px;
 }
 
-.deets {
-	position: absolute;
-	top: 20%;
-}
-
 /* ==========GENRESLIDER========== */
 
 .trending-title {
@@ -191,8 +186,8 @@ input:focus {
 
 .modal-dialog {
 	max-width: 100%;
-	position: absolute;
-	top: 20%;
+	/* position: absolute;
+	top: 20%; */
 }
 
 .modal-header .close {

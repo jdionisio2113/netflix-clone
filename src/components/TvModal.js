@@ -48,10 +48,17 @@ class TvModal extends Component {
 			seasons = `${seasons} season`;
 		}
 
-		console.log(this.props);
+		var element = document.body;
+		element.style.padding = '0';
 
 		return (
-			<Modal className="modal-container" isOpen={this.state.modal} toggle={this.toggleModal} backdrop={false}>
+			<Modal
+				className="modal-container"
+				isOpen={this.state.modal}
+				toggle={this.toggleModal}
+				// centered={true}
+				backdrop={false}
+			>
 				<div className="modal-wrapper">
 					<div className="description-container">
 						<Link
@@ -99,28 +106,17 @@ class TvModal extends Component {
 						)}
 					</ModalBody>
 				</div>
-				<Link
+				{/* <Link
 					to={{
 						pathname: `/`
 					}}
 					className="desktop-exit-modal"
 				>
-					{/* <button className="mobile-exit-modal" onClick={this.props.history.goBack}> */}
 					<span aria-hidden="true">
 						<i className="fas fa-times" />
 					</span>
-					{/* </button> */}
-				</Link>
+				</Link> */}
 			</Modal>
-			// <div>
-			// 	<img className="tv-poster" src={`https://image.tmdb.org/t/p/w780//${backDropPoster}`} />
-			// 	<div className="deets">
-			// 		<h1 className="tv_name">{tvSeriesName}</h1>
-			// 		<span>Release Date: {tvSeriesReleaseDate}</span>
-			// 		<span>{seasons}</span>
-			// 		<p className="description">{overviewDescription}</p>
-			// 	</div>
-			// </div>
 		);
 	}
 

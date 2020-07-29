@@ -16,7 +16,7 @@ class SearchContainer extends Component {
 		return (
 			<div>
 				{this.props.match.params.id ? <TvModalContainer id={id} /> : null}
-				<Search tvShows={this.props.tvShows} {...this.props} />
+				<Search {...this.props} />
 			</div>
 		);
 	}
