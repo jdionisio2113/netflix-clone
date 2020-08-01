@@ -9,12 +9,10 @@ export const getTrending = () => async (dispatch) => {
 	try {
 		const response = await endpoint.get(`trending/tv/week?api_key=${API_KEY}`);
 
-		// setTimeout(() => {
 		dispatch({
 			type: types.FETCHING_TRENDING_SUCCESS,
 			genreData: response.data.results
 		});
-		// }, 1000);
 	} catch (err) {
 		dispatch({
 			type: types.REQUEST_FAILED,

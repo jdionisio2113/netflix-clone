@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
+import TvModalContainer from '../containers/TvModalContainer';
 
 function GenreSlider(props) {
-	var { genreData, genreTitle, isFetching } = props;
+	var { genreData, genreTitle, isFetching, match } = props;
 
 	const settings = {
 		dots: false,
@@ -38,7 +39,7 @@ function GenreSlider(props) {
 
 	return (
 		<div className="genre-slider-container">
-			<h1 className="trending-title">{genreTitle}</h1>
+			<h1 className="genre-title">{genreTitle}</h1>
 			{isFetching ? (
 				<div className="loader" />
 			) : (

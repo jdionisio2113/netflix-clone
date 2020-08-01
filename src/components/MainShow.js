@@ -58,23 +58,23 @@ class MainShow extends Component {
 				this.setState({ error: true });
 			});
 
-		window.onscroll = function() {
-			var mainShowIframe = (event) => {
-				var iframe = document.querySelector('.main-show-iframe');
-				iframe.contentWindow.postMessage(
-					JSON.stringify({
-						event: 'command',
-						func: event
-					}),
-					'*'
-				);
-			};
+		var mainShowIframe = (event) => {
+			var iframe = document.querySelector('.main-show-iframe');
+			iframe.contentWindow.postMessage(
+				JSON.stringify({
+					event: 'command',
+					func: event
+				}),
+				'*'
+			);
+		};
 
+		window.onscroll = function() {
 			if (window.pageYOffset > 450) {
 				mainShowIframe('stopVideo');
 			}
 
-			if (window.pageYOffset === 0) {
+			if (window.pageYOffset > 0) {
 				mainShowIframe('playVideo');
 			}
 		};
@@ -101,16 +101,28 @@ class MainShow extends Component {
 								<p className="main-show-description">{overview}</p>
 							</div>
 						</div>
-						<iframe
-							scrolling="no"
-							frameBorder="0"
-							width="50%"
-							height="439px"
-							src={`https://www.youtube.com/embed/${trailerKey}?autoplay=1&enablejsapi=1`}
-							allowFullScreen="allowFullScreen"
-							allow="autoplay"
-							className="main-show-iframe"
-						/>
+						{this.props.id ? (
+							<iframe
+								scrolling="no"
+								frameBorder="0"
+								width="50%"
+								height="439px"
+								src={`https://www.youtube.com/embed/${trailerKey}?mute=1&enablejsapi=1`}
+								allowFullScreen="allowFullScreen"
+								className="main-show-iframe"
+							/>
+						) : (
+							<iframe
+								scrolling="no"
+								frameBorder="0"
+								width="50%"
+								height="439px"
+								src={`https://www.youtube.com/embed/${trailerKey}?autoplay=1&mute=1&enablejsapi=1`}
+								allowFullScreen="allowFullScreen"
+								allow="autoplay"
+								className="main-show-iframe"
+							/>
+						)}
 					</div>
 				)}
 			</div>

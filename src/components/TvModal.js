@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import GenreSliderContainer from '../containers/GenreSliderContainer';
 
 class TvModal extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			modal: true,
-			seasons: false
+			modal: true
 		};
 
 		this.toggleModal = this.toggleModal.bind(this);
@@ -58,8 +56,9 @@ class TvModal extends Component {
 				className="modal-container"
 				isOpen={this.state.modal}
 				toggle={this.toggleModal}
-				// centered={true}
-				backdrop={false}
+				centered={true}
+				backdrop={'static'}
+				keyboard={false}
 			>
 				<div className="modal-wrapper">
 					<div className="description-container">
@@ -73,14 +72,17 @@ class TvModal extends Component {
 								<i className="fas fa-times fa-2x" />
 							</span>
 						</Link>
-						<ModalHeader toggle={this.toggleModal}>
-							<h1 className="tv_name">{tvSeriesName}</h1>
-						</ModalHeader>
-						<div className="details">
-							<span>Release Date: {tvSeriesReleaseDate}</span>
-							<span>{seasons}</span>
+						<div className="description">
+							<h1 toggle={this.toggleModal} className="tv_name">
+								{tvSeriesName}
+							</h1>
+
+							<div className="details">
+								<span>Release Date: {tvSeriesReleaseDate}</span>
+								<span>{seasons}</span>
+							</div>
+							<p className="description-overview">{overviewDescription}</p>
 						</div>
-						<p className="description">{overviewDescription}</p>
 					</div>
 
 					<ModalBody>
@@ -108,22 +110,12 @@ class TvModal extends Component {
 						)}
 					</ModalBody>
 				</div>
-				{/* <Link
-					to={{
-						pathname: `/`
-					}}
-					className="desktop-exit-modal"
-				>
-					<span aria-hidden="true">
-						<i className="fas fa-times" />
-					</span>
-				</Link> */}
 			</Modal>
 		);
 	}
 
 	render() {
-		return <div>{this.TrailersDisplay()}</div>;
+		return this.TrailersDisplay();
 	}
 }
 

@@ -8,8 +8,6 @@ import TrendingContainer from './TrendingContainer';
 import MainShow from '../components/MainShow';
 import TvModalContainer from '../containers/TvModalContainer';
 
-// look for change in param then render tvmodal
-
 class GenreSliderContainer extends Component {
 	componentDidMount() {
 		this.props.getGenres(
@@ -43,19 +41,15 @@ class GenreSliderContainer extends Component {
 			types.FETCHING_FAMILY_FAILURE,
 			10751
 		);
-
-		// this.props.getGenres(types.FETCHING_KIDS, types.FETCHING_KIDS_SUCCESS, types.FETCHING_KIDS_FAILURE, 10762);
 	}
 
 	render() {
 		const { actionAdventure, comedies, documentaries, dramas, scifi, family, kids } = this.props;
 		var id = this.props.match.params.id;
-		// console.log(this.props);
 		return (
 			<div className="genre-slider-wrapper">
-				<MainShow />
+				<MainShow id={id} />
 				{this.props.match.params.id ? <TvModalContainer id={id} /> : null}
-
 				<TrendingContainer />
 				<GenreSlider
 					genreTitle={'Action & Adventure'}
@@ -93,12 +87,6 @@ class GenreSliderContainer extends Component {
 					error={family.error}
 					genreData={family.genreData}
 				/>
-				{/* <GenreSlider
-					genreTitle={'Kids'}
-					isFetching={kids.isFetching}
-					error={kids.error}
-					genreData={kids.genreData}
-				/> */}
 			</div>
 		);
 	}
