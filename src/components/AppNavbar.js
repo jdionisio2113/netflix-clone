@@ -46,8 +46,8 @@ class AppNavbar extends Component {
 				<div className="input-container">
 					<input
 						type="text"
-						name="Titles, people, genres"
-						placeholder="Titles, people, genres"
+						name="Search Titles"
+						placeholder="Search Titles"
 						autoComplete="off"
 						className="input-bar"
 						onChange={this.handleChange}
