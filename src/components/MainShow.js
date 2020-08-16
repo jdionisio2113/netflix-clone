@@ -78,6 +78,14 @@ class MainShow extends Component {
 				mainShowIframe('playVideo');
 			}
 		};
+
+		// Check for mobile orientation
+		// If so, stop mainShowIframe from playing
+		if (typeof window.onorientationchange != 'undefined') {
+			if (window.orientation == 0 || window.orientation == 90 || window.orientation == -90) {
+				mainShowIframe('stopVideo');
+			}
+		}
 	}
 
 	componentWillUnmount() {
