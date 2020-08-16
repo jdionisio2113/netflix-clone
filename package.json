@@ -1,43 +1,45 @@
 {
-  "name": "Netflix-Clone",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "webpack-dev-server --open",
-    "build": "NODE_ENV='production' webpack -p"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@babel/core": "^7.10.2",
-    "@babel/preset-env": "^7.10.2",
-    "@babel/preset-react": "^7.10.1",
-    "babel-loader": "^8.1.0",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.11.0"
-  },
-  "dependencies": {
-    "axios": "^0.19.2",
-    "babel": "^6.23.0",
-    "bootstrap": "^4.5.0",
-    "build": "^0.1.4",
-    "css-loader": "^3.5.3",
-    "html-webpack-plugin": "^4.3.0",
-    "path": "^0.12.7",
-    "react": "^16.13.1",
-    "react-bootstrap": "^1.0.1",
-    "react-dom": "^16.13.1",
-    "react-redux": "^7.2.0",
-    "react-router": "^5.2.0",
-    "react-router-dom": "^5.2.0",
-    "react-slick": "^0.26.1",
-    "reactstrap": "^8.5.1",
-    "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0",
-    "style-loader": "^1.2.1",
-    "url-loader": "^4.1.0"
-  }
+	"name": "Netflix-Clone",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "webpack-dev-server --open",
+		"build": "NODE_ENV='production' webpack -p",
+		"deploy": "npm run build && firebase deploy"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/core": "^7.10.2",
+		"@babel/preset-env": "^7.10.2",
+		"@babel/preset-react": "^7.10.1",
+		"babel-loader": "^8.1.0",
+		"webpack": "^4.43.0",
+		"webpack-cli": "^3.3.11",
+		"webpack-dev-server": "^3.11.0"
+	},
+	"dependencies": {
+		"axios": "^0.19.2",
+		"babel": "^6.23.0",
+		"bootstrap": "^4.5.0",
+		"build": "^0.1.4",
+		"css-loader": "^3.5.3",
+		"firebase": "^7.17.1",
+		"html-webpack-plugin": "^4.3.0",
+		"path": "^0.12.7",
+		"react": "^16.13.1",
+		"react-bootstrap": "^1.0.1",
+		"react-dom": "^16.13.1",
+		"react-redux": "^7.2.0",
+		"react-router": "^5.2.0",
+		"react-router-dom": "^5.2.0",
+		"react-slick": "^0.26.1",
+		"reactstrap": "^8.5.1",
+		"redux": "^4.0.5",
+		"redux-thunk": "^2.3.0",
+		"style-loader": "^1.2.1",
+		"url-loader": "^4.1.0"
+	}
 }

@@ -94,6 +94,7 @@ input:focus {
 
 .main-show-wrapper {
 	display: flex;
+	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
 	background: black;
@@ -101,24 +102,27 @@ input:focus {
 	color: #e5e5e5;
 }
 
+.backdrop-container iframe {
+	height: 200px;
+	width: 100%;
+}
+
 .main-show-overview {
 	position: relative;
 	flex-direction: column;
-	width: 50%;
-	margin: 0 auto;
 }
 
 .main-show-overview span {
 	display: block;
+	font-size: .7em;
 }
 
 .main-show-title {
-	font-size: 3em;
-	margin: .5em 0;
+	font-size: 1.5em;
 }
 
 .main-show-description {
-	font-size: 1.3em;
+	font-size: 1em;
 	margin: 1em 0;
 }
 
@@ -129,10 +133,16 @@ input:focus {
 
 .main-show {
 	position: absolute;
-	top: 5%;
-	margin: 0 5em;
-	max-height: 100%;
+	top: 0;
+	margin: 1em 2em;
+	max-height: 95%;
 	overflow: auto;
+	text-align: center;
+}
+
+.trailer-container {
+	margin: 1em;
+	width: 90%;
 }
 
 .tv-poster {
@@ -146,8 +156,8 @@ input:focus {
 
 .genre-title {
 	color: #e5e5e5;
-	margin: 1em;
-	font-size: 2em;
+	margin: .5em;
+	font-size: 1.5em;
 }
 
 .main_poster {
@@ -303,7 +313,60 @@ span .fa-times:hover {
 	color: rgb(185, 0, 0);
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 1100px) {
+	.main-show-overview span {
+		font-size: 1em;
+	}
+
+	.trailer-container {
+		margin: 0;
+		width: 50%;
+	}
+
+	.backdrop-container iframe {
+		height: 439px;
+		width: 100%;
+	}
+
+	.main-show {
+		position: absolute;
+		top: 5%;
+		margin: 0 5em;
+		max-height: 100%;
+		overflow: auto;
+		text-align: left;
+	}
+
+	.main-show-title {
+		font-size: 3em;
+	}
+
+	.main-show-wrapper {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		background: black;
+		top: 0;
+		color: #e5e5e5;
+	}
+
+	.main-show-description {
+		font-size: 1.2em;
+	}
+
+	.main-show-overview {
+		position: relative;
+		flex-direction: column;
+		width: 50%;
+		margin: 0 auto;
+	}
+
+	.genre-title {
+		margin: 1em;
+		font-size: 2em;
+	}
+
 	.input-container {
 		width: 15%;
 	}
@@ -349,5 +412,88 @@ span .fa-times:hover {
 		background-color: black;
 		display: flex;
 		flex-direction: row;
+	}
+
+	.main-show-overview {
+		position: relative;
+		flex-direction: column;
+		width: 50%;
+		margin: 0 auto;
+	}
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+	.main-show-wrapper {
+		flex-direction: row;
+	}
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+	.main-show-wrapper {
+		flex-direction: row;
+	}
+
+	.backdrop-container {
+		margin-top: 4em;
+	}
+
+	.main-show-wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background: black;
+		top: 0;
+		color: #e5e5e5;
+	}
+
+	.backdrop-container iframe {
+		height: 100%;
+		width: 100%;
+	}
+
+	.main-show-overview {
+		position: relative;
+		flex-direction: column;
+	}
+
+	.main-show-overview span {
+		display: block;
+		font-size: 1em;
+	}
+
+	.main-show-title {
+		font-size: 3em;
+	}
+
+	.main-show-description {
+		font-size: 1.5em;
+		margin: 1em 0 0 0;
+	}
+
+	.main-show-poster {
+		width: 100%;
+		opacity: .3;
+	}
+
+	.main-show {
+		position: absolute;
+		top: 0;
+		margin: 1em 2em;
+		max-height: 90%;
+		overflow: auto;
+		text-align: center;
+	}
+
+	.trailer-container {
+		margin: 1em;
+		width: 70%;
+		height: 339px;
+	}
+
+	.tv-poster {
+		width: 100%;
+		opacity: .3;
+		position: relative;
+		margin-top: 10px;
 	}
 }
