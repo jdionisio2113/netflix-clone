@@ -19,6 +19,7 @@ function searchReducer(state = initialState, action) {
 			return {
 				...state,
 				isFetching: false,
+				error: '',
 				tvShows: action.tvShows,
 				query: action.query
 			};

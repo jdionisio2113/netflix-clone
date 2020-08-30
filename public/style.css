@@ -4,7 +4,6 @@
 
 html,
 body {
-	/* max-width: 100%; */
 	overflow-x: hidden;
 	line-height: 1.4;
 	letter-spacing: 0.0625em;
@@ -311,6 +310,15 @@ span .fa-times:hover {
 	margin-top: 2em;
 	text-align: center;
 	color: rgb(185, 0, 0);
+}
+
+.search-error {
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	right: 0;
+	left: 0;
+	color: rgb(184, 3, 3);
 }
 
 @media screen and (min-width: 1100px) {

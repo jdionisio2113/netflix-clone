@@ -6,6 +6,9 @@ function Search(props) {
 	const tvShowData = tvShows.tvShows;
 	const search = props.match.params.search;
 
+	if (!tvShowData[0]) {
+		return <h3 className="search-error">Sorry! Please try again.</h3>;
+	}
 	return (
 		<div className="tvshow_display-container">
 			{tvShows.isFetching ? (
