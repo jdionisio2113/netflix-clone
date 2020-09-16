@@ -28,6 +28,7 @@
 		"css-loader": "^3.5.3",
 		"firebase": "^7.17.1",
 		"html-webpack-plugin": "^4.3.0",
+		"node-sass": "^4.14.1",
 		"path": "^0.12.7",
 		"react": "^16.13.1",
 		"react-bootstrap": "^1.0.1",
@@ -39,6 +40,8 @@
 		"reactstrap": "^8.5.1",
 		"redux": "^4.0.5",
 		"redux-thunk": "^2.3.0",
+		"sass": "^1.26.10",
+		"sass-loader": "^10.0.1",
 		"style-loader": "^1.2.1",
 		"url-loader": "^4.1.0"
 	}

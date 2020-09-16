@@ -1,5 +1,5 @@
 import React from 'react';
-import '../public/style.css';
+import '../public/style.scss';
 import { Provider } from 'react-redux';
 import App from './components/App';
 import { createStore, applyMiddleware, compose } from 'redux';
